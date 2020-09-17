@@ -1,1 +1,3 @@
-<p>servers works!</p>
+<input type="text" class="forms-module" name="username" [(ngModel)]="userName" (input)="onUsernameUpdate($event)">
+<p>Username is {{ userName }}</p>
+<button class="btn btn-primary" (click)="onResetUsername()" [disabled]="disableBtn">Reset Username</button>
