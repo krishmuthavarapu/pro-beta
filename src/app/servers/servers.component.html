@@ -1,3 +1,12 @@
-<input type="text" class="forms-module" name="username" [(ngModel)]="userName" (input)="onUsernameUpdate($event)">
+<label for="">Username</label>
+<input type="text" class="form-control" name="username" [(ngModel)]="userName" (input)="onUsernameUpdate($event)">
 <p>Username is {{ userName }}</p>
-<button class="btn btn-primary" (click)="onResetUsername()" [disabled]="disableBtn">Reset Username</button>
+<button class="btn btn-primary" (click)="onResetUsername()" [disabled]="disableBtn">Add Server</button>
+
+<p *ngIf="serverCreated; else notCreated">User Name is {{userName}} </p>
+<ng-template #notCreated>
+    <p>Not Created</p>
+</ng-template>
+<p *ngFor="let server of servers" [ngClass]="{bgo: serverStatus==='Online',bgo2: serverStatus==='Online'}"
+    [ngStyle]="{color: getColor()}">Server is
+    {{ serverStatus }}</p>

@@ -7,9 +7,18 @@ import { empty } from 'rxjs';
   styleUrls: ['./servers.component.css'],
 })
 export class ServersComponent implements OnInit {
-  userName = 'Enter';
+  userName = '';
   disableBtn = true;
-  constructor() {}
+  serverCreated = false;
+  serverStatus: String = 'Online';
+  serverName = 'Test Server';
+  servers = ['Serve 1', 'Serve2'];
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'Online' : 'Offline';
+  }
+  getColor() {
+    return this.serverStatus === 'Online' ? 'green' : 'red';
+  }
 
   ngOnInit(): void {
     if (this.userName) {
@@ -18,12 +27,9 @@ export class ServersComponent implements OnInit {
   }
 
   onResetUsername() {
-    if ((this.userName = '')) {
-      this.disableBtn = false;
-    } else {
-      this.userName = '';
-      this.disableBtn = true;
-    }
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
+    this.serverName = 'Server status is' + this.serverName;
   }
   onUsernameUpdate(event: any) {
     this.disableBtn = false;
