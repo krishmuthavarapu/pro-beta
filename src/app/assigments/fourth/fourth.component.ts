@@ -15,11 +15,7 @@ export class FourthComponent implements OnInit {
   ngOnInit(): void {}
   toggleData() {
     //  this.dataState === false ? true : false;
-    if (this.dataState === false) {
-      this.dataState = true;
-    } else {
-      this.dataState = false;
-    }
+    this.dataState = !this.dataState;
     this.arrayData.push(this.firstNum++);
     console.log(this.arrayData);
   }

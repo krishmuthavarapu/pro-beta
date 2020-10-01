@@ -4,9 +4,9 @@
             <button class="btn btn-primary" (click)="toggleData()">Display Details</button>
             <p *ngIf="dataState ==true">{{ paraData }}</p>
 
-            <div *ngFor="let list of arrayData">
-                <p class="text-center" [ngClass]="{fontCol: arrayData.length > 5}"
-                    [ngStyle]="{backgroundColor: getBg()}">Ckick {{list}}</p>
+            <div *ngFor="let list of arrayData" [ngClass]="{fontCol: list >= 5}"
+                [ngStyle]="{backgroundColor: list >= 5? 'blue':'white'}">
+                <p class="text-center">Ckick {{list}}</p>
             </div>
         </div>
     </div>
