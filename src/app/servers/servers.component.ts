@@ -13,9 +13,7 @@ export class ServersComponent implements OnInit {
   serverStatus: String = 'Online';
   serverName = 'Test Server';
   servers = ['Serve 1', 'Serve2'];
-  serverElements = [];
-  newServerName = '';
-  newServerContent = '';
+
   constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'Online' : 'Offline';
   }
@@ -36,20 +34,5 @@ export class ServersComponent implements OnInit {
   }
   onUsernameUpdate(event: any) {
     this.disableBtn = false;
-  }
-  onAddServer() {
-    this.serverElements.push({
-      type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent,
-    });
-  }
-
-  onAddBlueprint() {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent,
-    });
   }
 }
