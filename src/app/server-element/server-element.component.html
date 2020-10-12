@@ -5,8 +5,7 @@
     <div class="card-body">
 
         <p class="card-text px-2">
-            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+            <ng-content></ng-content>
         </p>
     </div>
 

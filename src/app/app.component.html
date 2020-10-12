@@ -3,6 +3,12 @@
         <div class="text-center py-3 col-12">
             <h3>{{title}}</h3>
         </div>
+        <!-- <div class="chi-dropdown__menu -list -w&#45;&#45;lg" style="position: absolute; top: 49px"
+            [ngClass]="{'-active':isChannelMenuActive}">
+            <a class="chi-dropdown__menu-item " href="www.example.com" (click)="goToMediaPortal()">
+                <span class="chi-dropdown__menu-item_title">Media Portal</span>
+            </a>
+        </div> -->
     </div>
     <div>
         <app-servers></app-servers>
@@ -27,6 +33,8 @@
     <div class="row">
         <div class="col-sm-12">
             <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement">
+                <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+                <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
             </app-server-element>
         </div>
     </div>

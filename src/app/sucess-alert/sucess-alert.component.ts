@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-sucess-alert',
   templateUrl: './sucess-alert.component.html',
   styleUrls: ['./sucess-alert.component.css'],
 })
-export class SucessAlertComponent implements OnInit {
+export class SucessAlertComponent implements OnInit, OnChanges {
   allownewserver = true;
   serverCreationStatus = 'Server was not created';
   inputValue = 'Enter';
@@ -16,6 +16,9 @@ export class SucessAlertComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Hey change');
+  }
   onCreateServer() {
     this.serverCreationStatus = 'Server is Created';
     this.allownewserver = false;
