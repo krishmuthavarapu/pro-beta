@@ -9,6 +9,10 @@ import { SucessAlertComponent } from './sucess-alert/sucess-alert.component';
 import { FourthComponent } from './assigments/fourth/fourth.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { AssignmentFourthComponent } from './assigments/assignment-fourth/assignment-fourth.component';
+import { GameControlComponent } from './assigments/game-control/game-control.component';
+import { OddComponent } from './assigments/odd/odd.component';
+import { EvenComponent } from './assigments/even/even.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ServerElementComponent } from './server-element/server-element.componen
     SucessAlertComponent,
     FourthComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    AssignmentFourthComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<app-game-control (counter)="counterClick($event)"></app-game-control>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <app-odd *ngFor="let oddNum of oddNumber" [oddNum]="oddNum"></app-odd>
+        </div>
+        <div class="col-6">
+            <app-even *ngFor="let evenNum of evenNumber" [evenNum]="evenNum"></app-even>
+        </div>
+    </div>
+</div>
